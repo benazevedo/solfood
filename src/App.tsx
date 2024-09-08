@@ -74,6 +74,7 @@ const App: React.FC = () => {
         </ul>
       </header>
 
+      {/* This thing aint flipping */}
       <div className={`banner ${flipped ? 'active' : ''}`}>
         <div className="content">
           <h1>
