@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import './App.css';
+import apple from './images/apple.png';
+import google from './images/google.png';
+import food1 from './images/food-1.jpeg';
+import food2 from './images/food-2.jpeg';
+import food3 from './images/food-3.jpeg';
 
 const App: React.FC = () => {
   const [searchActive, setSearchActive] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
-  const [imgSrc, setImgSrc] = useState('./images/food-1.jpeg');
+  const [imgSrc, setImgSrc] = useState(food1);
   const [flipped, setFlipped] = useState(false);
 
   const toggleSearch = () => {
@@ -20,7 +25,7 @@ const App: React.FC = () => {
   };
 
   const changeImg = (img: string) => {
-    setImgSrc(`./images/${img}`);
+    setImgSrc(img);
   };
 
   return (
@@ -86,10 +91,10 @@ const App: React.FC = () => {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <ul className="download">
               <li>
-                <img src="./images/apple.png" alt="Apple" />
+                <img src={apple} alt="Apple" />
               </li>
               <li>
-                <img src="./images/google.png" alt="Google" />
+                <img src={google} alt="Google" />
               </li>
             </ul>
             <span className="price">$37.59</span>
@@ -103,23 +108,14 @@ const App: React.FC = () => {
         </span>
         <div className="selections">
           <div className="circle">
-            <div
-              className="options one"
-              onClick={() => changeImg('food-1.jpeg')}
-            >
-              <img src="./images/food-1.jpeg" alt="Food 1" />
+            <div className="options one" onClick={() => changeImg(food1)}>
+              <img src={food1} alt="Food 1" />
             </div>
-            <div
-              className="options two"
-              onClick={() => changeImg('food-2.jpeg')}
-            >
-              <img src="./images/food-2.jpeg" alt="Food 2" />
+            <div className="options two" onClick={() => changeImg(food2)}>
+              <img src={food2} alt="Food 2" />
             </div>
-            <div
-              className="options three"
-              onClick={() => changeImg('food-3.jpeg')}
-            >
-              <img src="./images/food-3.jpeg" alt="Food 3" />
+            <div className="options three" onClick={() => changeImg(food3)}>
+              <img src={food3} alt="Food 3" />
             </div>
           </div>
           <h1>Healthy Life</h1>
