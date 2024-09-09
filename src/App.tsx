@@ -36,7 +36,10 @@ const App: React.FC = () => {
         </a>
 
         <div className={`search ${searchActive ? 'active' : ''}`}>
-          <ion-icon name="search-outline" onClick={toggleSearch}></ion-icon>
+          <ion-icon
+            name="search-outline"
+            onClick={() => toggleSearch()}
+          ></ion-icon>
           <input type="text" placeholder="SEARCH" />
         </div>
 
@@ -56,7 +59,7 @@ const App: React.FC = () => {
             <ion-icon name="bag-outline"></ion-icon>
             <span className="number">4</span>
           </div>
-          <a className="menu" onClick={toggleMenu}>
+          <a className="menu" onClick={() => toggleMenu()}>
             <ion-icon name="ellipsis-vertical-outline"></ion-icon>
           </a>
         </div>
@@ -75,7 +78,7 @@ const App: React.FC = () => {
       </header>
 
       {/* This thing aint flipping */}
-      <div className={`banner ${flipped ? 'active' : ''}`}>
+      <div className="banner">
         <div className="content">
           <h1>
             Sol <ion-icon name="sunny-outline"></ion-icon>
@@ -83,7 +86,7 @@ const App: React.FC = () => {
           </h1>
           <h2>Food</h2>
         </div>
-        <div className="imgBox">
+        <div className={`imgBox ${flipped ? 'active' : ''}`}>
           <div className="food">
             <img className="food-img" src={imgSrc} alt="food" />
           </div>
@@ -101,7 +104,11 @@ const App: React.FC = () => {
             <span className="price">$37.59</span>
           </div>
         </div>
-        <a className="btn" href="#" onClick={toggleFlip}>
+        <a
+          className={`btn ${flipped ? 'active' : ''}`}
+          href="#"
+          onClick={() => toggleFlip()}
+        >
           Learn more <ion-icon name="search-outline"></ion-icon>
         </a>
         <span className="order">
